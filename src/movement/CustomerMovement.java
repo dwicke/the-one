@@ -31,7 +31,7 @@ public class CustomerMovement extends MapBasedMovement {
     public CustomerMovement(Settings settings) {
         super(settings);
         int bcs = settings.getInt(Bondsman.BONDSMAN_CONTROL_SYSTEM_NR);
-        controlSystem = Bondsman.getBusControlSystem(bcs);
+        controlSystem = Bondsman.getBondsmanControlSystem(bcs);
         id = nextID++;
         controlSystem.registerTraveller(this);
         nextPath = new Path();

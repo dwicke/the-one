@@ -60,6 +60,7 @@ Group.interface1 = btInterface
 Group.speed = 0.5, 1.5
 # Message TTL of 300 minutes (5 hours)
 Group.msgTtl = 300
+Group.bondsmanControlSystemNr = 1
 
 ## this is for being able to set a destination for messages
 Group1.groupID = stationary
@@ -89,7 +90,7 @@ Group3.okMaps = 1, 2
 Group3.nrofApplications = 1
 Group3.application1 = myApp
 Group3.speed = 0.5, 0.5
-Group3.movementModel = BounterHunterMovement
+Group3.movementModel = BountyHunterMovement
 
 
 

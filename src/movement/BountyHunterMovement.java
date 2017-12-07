@@ -24,7 +24,7 @@ public class BountyHunterMovement extends ShortestPathMapBasedMovement{
     public BountyHunterMovement(Settings settings) {
         super(settings);
         int bcs = settings.getInt(Bondsman.BONDSMAN_CONTROL_SYSTEM_NR);
-        controlSystem = Bondsman.getBusControlSystem(bcs);
+        controlSystem = Bondsman.getBondsmanControlSystem(bcs);
         this.id = nextID++;
         controlSystem.registerBountyHunter(this);
         startMode = true;

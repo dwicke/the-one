@@ -63,9 +63,9 @@ public class Bondsman {
      * If a system does not already exist with the requested ID, a new one is
      * created.
      * @param systemID unique ID of the system
-     * @return The bus control system with the provided ID
+     * @return The Bondsman control system with the provided ID
      */
-    public static Bondsman getBusControlSystem(int systemID) {
+    public static Bondsman getBondsmanControlSystem(int systemID) {
         Integer id = new Integer(systemID);
 
         if (systems.containsKey(id)) {
