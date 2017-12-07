@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 targetdir=target
 
 if [ ! -d "$targetdir" ]; then mkdir $targetdir; fi
