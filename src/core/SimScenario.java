@@ -372,6 +372,7 @@ public class SimScenario implements Serializable {
 					// Load an instance of the application
 					protoApp = (Application)t.createIntializedObject(
 							APP_PACKAGE + t.getSetting(APPTYPE_S));
+					protoApp.applySettings(t);
 					// Set application listeners
 					protoApp.setAppListeners(this.appListeners);
 					// Set the proto application in proto router

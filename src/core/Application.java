@@ -4,6 +4,8 @@
  */
 package core;
 
+import util.MersenneTwisterFast;
+
 import java.util.List;
 
 /**
@@ -38,8 +40,16 @@ public abstract class Application {
 
 	public String	appID	= null;
 
+	/** common rng for all movement models in the simulation */
+	protected static MersenneTwisterFast rng;
+
+	/** movement models' rng seed -setting id ({@value})*/
+	public static final String RNG_SEED = "seed";
+
 	public Application(){
 	}
+
+
 
 	/**
 	 * Copy constructor.
@@ -50,6 +60,19 @@ public abstract class Application {
 		this.aListeners = app.getAppListeners();
 		this.appID = app.appID;
 	}
+
+	public void applySettings(Settings s) {
+		if (s.contains(RNG_SEED)) {
+			int seed = s.getInt(RNG_SEED);
+			rng = new MersenneTwisterFast(seed);
+			System.err.println("The seed = " + seed);
+		}
+		else {
+			rng = new MersenneTwisterFast(0);
+			System.err.println("The seed = 0" );
+		}
+	}
+
 
 	/**
 	 * This method handles application functionality related to

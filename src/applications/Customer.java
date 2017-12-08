@@ -31,20 +31,23 @@ public class Customer extends Application {
     public static final String CUSTOMER_GENERATION_RATE = "generationRate";
 
 
+    public Customer() {
+        this.state = 0;
+    }
+
     public Customer(Customer a) {
         super(a);
         this.state = a.state;
     }
-    public Customer(Settings s) {
-        state = 0;
 
-        this.baseBounty = s.getDouble(CUSTOMER_BASE_BOUNTY);
-        this.bountyRate = s.getDouble(CUSTOMER_BOUNTY_RATE);
-        this.genRate = s.getDouble(CUSTOMER_GENERATION_RATE);
+    @Override
+    public void applySettings(Settings s) {
+        super.applySettings(s);
+
+//        this.baseBounty = s.getDouble(CUSTOMER_BASE_BOUNTY);
+//        this.bountyRate = s.getDouble(CUSTOMER_BOUNTY_RATE);
+//        this.genRate = s.getDouble(CUSTOMER_GENERATION_RATE);
     }
-
-
-
 
     @Override
     public Message handle(Message msg, DTNHost host) {
@@ -59,7 +62,7 @@ public class Customer extends Application {
 
         switch (state) {
             case WANDER:
-                CustomerMovement mvt = (CustomerMovement) host.getMovement();
+
 
                 break;
             case WAITING_FOR_RIDE:

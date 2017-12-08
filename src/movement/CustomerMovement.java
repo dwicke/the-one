@@ -57,6 +57,10 @@ public class CustomerMovement extends MapBasedMovement {
 
 
 
+
+
+
+
     @Override
     public Path getPath() {
 

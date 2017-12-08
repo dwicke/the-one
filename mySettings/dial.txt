@@ -73,6 +73,7 @@ Group1.nodeLocation = 0, 0
 Group2.nrofApplications = 1
 # note that the type is the class name of the application (must be in the application package)
 myApp.type = MySimpleApp
+myApp.seed = 400
 
 # group1 (pedestrians) specific settings
 Group2.groupID = customer
