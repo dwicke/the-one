@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import util.MersenneTwisterFast;
 import util.Tuple;
 
 import core.Coord;
@@ -47,7 +48,7 @@ public class PointsOfInterest {
 	/** list of probabilites of choosing a POI group */
 	private List<Tuple<Double, Integer>> poiProbs;
 	/** (pseudo) random number generator */
-	private Random rng;
+	private MersenneTwisterFast rng;
 
 	/**
 	 * Constructor.
@@ -58,7 +59,7 @@ public class PointsOfInterest {
 	 * @param rng The random number generator to use
 	 */
 	public PointsOfInterest(SimMap parentMap, int [] okMapNodeTypes,
-			Settings settings, Random rng) {
+			Settings settings, MersenneTwisterFast rng) {
 		this.poiLists = new ArrayList<List<MapNode>>();
 		this.poiProbs = new LinkedList<Tuple<Double, Integer>>();
 		this.map = parentMap;

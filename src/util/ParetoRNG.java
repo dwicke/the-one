@@ -11,7 +11,7 @@ import java.util.Random;
  * @author Frans Ekman
  */
 public class ParetoRNG {
-	private Random rng;
+	private MersenneTwisterFast rng;
 	private double xm; // min value (Xm)
 	private double k; // coefficient
 	private double maxValue;
@@ -24,7 +24,7 @@ public class ParetoRNG {
 	 * @param minValue
 	 * @param maxValue
 	 */
-	public ParetoRNG(Random rng, double k, double minValue, double maxValue) {
+	public ParetoRNG(MersenneTwisterFast rng, double k, double minValue, double maxValue) {
 		this.rng = rng;
 		this.xm = minValue;
 		this.k = k;

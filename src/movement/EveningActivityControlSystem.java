@@ -10,6 +10,7 @@ import java.util.Random;
 
 import core.Coord;
 import core.DTNSim;
+import util.MersenneTwisterFast;
 
 /**
  * This class controls the group mobility of the people meeting their friends in
@@ -23,7 +24,7 @@ public class EveningActivityControlSystem {
 	private List<Coord> meetingSpots;
 	private EveningTrip[] nextTrips;
 
-	private Random rng;
+	private MersenneTwisterFast rng;
 
 	private static HashMap<Integer, EveningActivityControlSystem>
 		controlSystems;
@@ -114,7 +115,7 @@ public class EveningActivityControlSystem {
 	 * Sets the random number generator to be used
 	 * @param rand
 	 */
-	public void setRandomNumberGenerator(Random rand) {
+	public void setRandomNumberGenerator(MersenneTwisterFast rand) {
 		this.rng = rand;
 	}
 

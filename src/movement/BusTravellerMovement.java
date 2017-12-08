@@ -12,6 +12,7 @@ import movement.map.MapNode;
 import movement.map.SimMap;
 import core.Coord;
 import core.Settings;
+import util.MersenneTwisterFast;
 
 /**
  *
@@ -233,9 +234,9 @@ public class BusTravellerMovement extends MapBasedMovement implements
 
 		private double[] probabilities; // Probability to travel with bus
 		private int state;
-		private Random rng;
+		private MersenneTwisterFast rng;
 
-		public ContinueBusTripDecider(Random rng, double[] probabilities) {
+		public ContinueBusTripDecider(MersenneTwisterFast rng, double[] probabilities) {
 			this.rng = rng;
 			this.probabilities = probabilities;
 			state = 0;

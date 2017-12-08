@@ -15,6 +15,7 @@ import core.ModuleCommunicationBus;
 import core.Settings;
 import core.SimClock;
 import core.SimError;
+import util.MersenneTwisterFast;
 
 /**
  * <P>Superclass for all movement models. All subclasses must contain at least a
@@ -46,7 +47,7 @@ public abstract class MovementModel {
 	public static final String RNG_SEED = "rngSeed";
 
 	/** common rng for all movement models in the simulation */
-	protected static Random rng;
+	protected static MersenneTwisterFast rng;
 
 	/** DTNHost to which this movement model is attached */
 	protected DTNHost host;
@@ -278,10 +279,10 @@ public abstract class MovementModel {
 		Settings s = new Settings(MOVEMENT_MODEL_NS);
 		if (s.contains(RNG_SEED)) {
 			int seed = s.getInt(RNG_SEED);
-			rng = new Random(seed);
+			rng = new MersenneTwisterFast(seed);
 		}
 		else {
-			rng = new Random(0);
+			rng = new MersenneTwisterFast(0);
 		}
 	}
 
