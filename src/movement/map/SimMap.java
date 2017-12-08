@@ -58,7 +58,7 @@ public class SimMap implements Serializable {
 				nodesMap.put(node.getLocation(), node); // re-hash
 			}
 		}
-
+		needsRehash = false; // [RAVEN] um... if it ever needed a rehash, always rehash??? adding this to stop infinite rehashing...
 		return nodesMap.get(c);
 	}
 

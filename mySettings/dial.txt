@@ -62,7 +62,7 @@ Group.speed = 0.5, 1.5
 Group.msgTtl = 300
 Group.bondsmanControlSystemNr = 1
 
-## this is for being able to set a destination for messages
+## this is for being able to set a destination for messages (so it floods)
 Group1.groupID = stationary
 Group1.nrofHosts = 1
 Group1.movementModel = StationaryMovement
